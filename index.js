@@ -354,4 +354,4 @@ async function fetchAttachment(url) {
 }
 
 // Remplacez token par votre propre jeton de bot Discord
-client.login(process.env.token);
+client.login('MTI2MDM2NDk0NjY3MjE4OTQ1MA.GYI8SM.EV3WY1OdtnHXojvycOT8G46VssL7Z5bclUPqwI');
