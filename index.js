@@ -296,7 +296,7 @@ client.on('messageCreate', async (message) => {
       .setColor('GREEN')
       .setTitle(`Génération du compte ${serviceName}`)
       .setDescription(`Le compte a été généré avec succès. Veuillez vérifier vos messages privés. Veuillez mettre un proof sous peine d'une sanction.`)
-      .setImage('url de votre banniere);
+      .setImage('url de votre banniere');
     message.channel.send({ embeds: [successEmbed] });
   } catch (error) {
     console.error(error);
