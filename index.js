@@ -354,4 +354,4 @@ async function fetchAttachment(url) {
 }
 
 // Remplacez token par votre propre jeton de bot Discord
-client.login('MTI2MDM2NDk0NjY3MjE4OTQ1MA.GYI8SM.EV3WY1OdtnHXojvycOT8G46VssL7Z5bclUPqwI');
+client.login('MTI2MDM2NDk0NjY3MjE4OTQ1MA.GkV7Q2.-D3tJ18iyHEOa6ghrr6vOJT3r0ntCu1KaM57NI');
