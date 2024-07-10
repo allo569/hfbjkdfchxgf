@@ -37,11 +37,11 @@ client.on('messageCreate', async (message) => {
   const command = args.shift().toLowerCase();
 
   // Vérification du salon pour utiliser les commandes !gen, !stock et !restock
-  const allowedGenChannelId = 'id du salon gen'; // ID du salon autorisé pour !gen
-  const allowedStockChannelId = 'id du salon stock'; // ID du salon autorisé pour !stock
-  const allowedRestockUser = 'id de l'utilisateur admin'; // ID de l'utilisateur autorisé pour !restock
-  const allowedDeleteUser = 'id de l'utilisateur admin; // ID de l'utilisateur autorisé pour !delete
-  const allowedDelStockUser = 'id de l'utilisateur admin'; // ID de l'utilisateur autorisé pour !delstock
+  const allowedGenChannelId = '1260001500621701130'; // ID du salon autorisé pour !gen
+  const allowedStockChannelId = '1260001500621701130'; // ID du salon autorisé pour !stock
+  const allowedRestockUser = '1259986776529834096'; // ID de l'utilisateur autorisé pour !restock
+  const allowedDeleteUser = '1259986776529834096'; // ID de l'utilisateur autorisé pour !delete
+  const allowedDelStockUser = '1259986776529834096'; // ID de l'utilisateur autorisé pour !delstock
 
   if (command === 'create' && message.author.id === allowedRestockUser) {
     const serviceName = args[0] ? args[0].toLowerCase() : null;
@@ -100,14 +100,14 @@ client.on('messageCreate', async (message) => {
         message.channel.send({ embeds: [confirmEmbed] });
 
         // Envoi de l'embed dans le canal de restock
-        const restockChannel = client.channels.cache.get('id du salon restock'); // ID du canal pour les restocks
+        const restockChannel = client.channels.cache.get('1260081069106008155'); // ID du canal pour les restocks
         if (restockChannel) {
           const embed = new MessageEmbed()
             .setColor('GREEN')
             .setTitle(`Restock du service ${serviceName}`)
             .setDescription(`${newLinesCount} compte(s) ajouté(s). Comptes restants : ${existingLines.length + newLinesCount}`)
             .addField('Redirection', `<#id du salons gen>`);
-          restockChannel.send({ embeds: [embed], content: '<@&id du rôle a ping au restock>' }); // Ping du rôle
+          restockChannel.send({ embeds: [embed], content: '@everyone' }); // Ping du rôle
         }
       } catch (error) {
         console.error(error);
@@ -354,4 +354,4 @@ async function fetchAttachment(url) {
 }
 
 // Remplacez token par votre propre jeton de bot Discord
-client.login('token');
+client.login(process.env.token);
